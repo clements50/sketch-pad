@@ -52,6 +52,10 @@ button {
     cursor: pointer;
 }
 
+.black-btn {
+    border: 3px solid black; 
+}
+
 .buttons {
     display: flex;
     gap: 1rem;

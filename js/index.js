@@ -3,6 +3,7 @@ const btns = document.querySelectorAll('button');
 sketchPad.style.gridTemplateColumns = 'repeat(16, 1fr)';
 sketchPad.style.gridTemplateRows = 'repeat(16, 1fr)';
 
+let activeColor = 'black';
 
 function renderTiles() {
 
@@ -22,17 +23,27 @@ function clearElement(element) {
 }
 
 sketchPad.addEventListener('pointerover', (e) => {
-    console.log(e.target)
     if (e.target.className === 'tile') {
-        console.log('hi')
-        e.target.style.background = 'black';
+        e.target.style.background = activeColor;
     }
 })
 
 btns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-     console.log(e.target)
+        deActivateBtn()
+        if(e.target.innerText.toLowerCase() === 'eraser'){
+            activeColor = 'white';
+        }else {    
+        activeColor = e.target.innerText.toLowerCase();
+        e.target.style.border = `3px solid ${activeColor}`
+        }
     })
 })
+
+function deActivateBtn() {
+    btns.forEach(btn => {
+        btn.style.border = 'none';
+    })
+}
 
 renderTiles()
