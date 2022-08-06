@@ -16,6 +16,7 @@
     gap: 1rem;
 }
 
+
 .heading {
     color: #E7F6F2;
     font-weight: 900;
@@ -27,6 +28,11 @@
     width: 500px;
     border: 10px solid #D61C4E;
     background: white;
+    display: grid;
+}
+
+.tile {
+    border: 1px solid black;
 }
 
 .controls {
