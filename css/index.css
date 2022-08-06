@@ -29,6 +29,7 @@
     border: 10px solid #D61C4E;
     background: white;
     display: grid;
+    touch-action: none;
 }
 
 .tile {
@@ -67,4 +68,15 @@ button {
     align-items: center;
     gap: 1rem;
     color: white;
+}
+
+@media screen and (max-width: 600px){
+  .sketch-pad{
+      height: 320px;
+      width: 320px;
+  }
+
+  button {
+    width: 3.2rem;
+  }
 }
